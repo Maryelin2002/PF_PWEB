@@ -1,3 +1,4 @@
+-- BD MySQL
 CREATE DATABASE AplicacionDoctores;
 USE AplicacionDoctores;
 
