@@ -1,4 +1,4 @@
--- CREATE DATABASE AplicacionDoctores;
+CREATE DATABASE AplicacionDoctores;
 USE AplicacionDoctores;
 
 CREATE TABLE DOCTORES
