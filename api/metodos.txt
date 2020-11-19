@@ -1,0 +1,9 @@
+Metodos del API:
+$ Registro de pacientes
+$ Inicio de sesión de doctores
+$ Registro de consultas
+$ Consultar y modificar datos de pacientes
+$ Vistas
+$ Vista por fecha
+$ Vista por cant de visitas
+$ Vista por signo zodiacal
