@@ -1,1 +1,138 @@
-print("API de doctores")
+#print("API de doctores")
+
+from mysql.connector import Error
+from fastapi import FastAPI
+import mysql.connector
+import secrets
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return{"Bienvenido"}
+
+@app.get("/registroDoc/{nombre}/{apellido}/{email}/{clave}")
+def registroDoc(nombre: str, apellido: str, email: str, clave: str):
+
+    #conexion a bd
+    conn = None
+    try:
+        conn = mysql.connector.connect(host='localhost',
+                                       database='aplicaciondoctores',
+                                       user='YelinDBManager',
+                                       password='mysql')
+        if conn.is_connected():
+            print('Connected to MySQL database')
+
+    except Error as e:
+        print(e)
+
+    
+    #crear usuario
+    user = (nombre, apellido, email, clave)
+
+    #validar creacion de usuario
+    row = None
+    cur = conn.cursor()
+    sql = ("SELECT email FROM doctores WHERE email = %s")
+
+    cur.execute(sql, (email,))
+
+    rows = cur.fetchall()
+
+    for r in rows:
+        row = r
+
+    if (row == None):
+        sql = '''INSERT INTO doctores(nombre, apellido, email, clave, token) values(%s,%s,%s,%s,null)'''
+        cur = conn.cursor()
+        cur.execute(sql, user)
+        conn.commit()
+
+        msg = "Doctor registrado exitosamente"
+    else:
+        msg = "No fue posible realizar el registro, correo ya registrado"
+
+    return{"result":msg, "ok":"true"}
+
+@app.get("/inicio_sesion/{email}/{clave}")
+def inicio_sesion(email: str, clave: str):
+
+    #conexion a bd
+    conn = None
+    try:
+        conn = mysql.connector.connect(host='localhost',
+                                       database='aplicaciondoctores',
+                                       user='YelinDBManager',
+                                       password='mysql')
+        if conn.is_connected():
+            print('Connected to MySQL database')
+
+    except Error as e:
+        print(e)
+    
+    #validar credenciales de usuario
+    row = None
+    cur = conn.cursor()
+    
+    sql = "SELECT * FROM doctores WHERE email = %s AND clave = %s"
+    cur.execute(sql, (email, clave,))
+
+    rows = cur.fetchall()
+
+    for r in rows:
+        row = r
+    
+    if (row == None):
+        msg = "Email o clave incorrectos"
+    else:
+        token = secrets.token_hex(3)
+
+        login_sql = "UPDATE doctores SET token = %s WHERE email = %s AND clave = %s"
+        cur.execute(login_sql, (token, email, clave))
+        conn.commit()
+        
+        msg = "Inicio de sesion exitoso, su token: "+str(token)
+
+    return{"result": msg, "ok":"true"}
+
+@app.get("/registro_paciente/{cedula}/{nombre}/{apellido}/{sangre}/{gen}/{fecha_nac}/{alergias}/{emailDoc}")
+def registro_paciente(cedula: str, nombre: str, apellido: str, sangre: str, gen: str, fecha_nac: str, alergias: str, emailDoc: str):
+
+    #conexion a bd
+    conn = None
+    try:
+        conn = mysql.connector.connect(host='localhost',
+                                       database='aplicaciondoctores',
+                                       user='YelinDBManager',
+                                       password='mysql')
+        if conn.is_connected():
+            print('Connected to MySQL database')
+
+    except Error as e:
+        print(e)
+    
+    #buscar id del doctor
+    row = None
+
+    cur = conn.cursor()
+    sql = "SELECT id_doctor FROM doctores WHERE email = %s"
+    cur.execute(sql, (emailDoc,))
+
+    row = cur.fetchone()
+
+    if (row == None):
+        msg = "Doctor no encontrado"
+    else:
+        #registrar paciente
+        idDoc = int(row[0])
+        p = (cedula, nombre, apellido, sangre, gen, fecha_nac, alergias, idDoc)
+
+        sql = "INSERT INTO pacientes(cedula, nombre, apellido, tipo_sangre, genero, fecha_nacimiento, alergias, foto, id_doctor) VALUES(%s,%s,%s,%s,%s,%s,%s,null,%s)"
+        cur.execute(sql, p)
+        conn.commit()
+
+        msg = "Paciente registrado exitosamente"
+
+    return{"result": msg, "ok":"true"}
+    
