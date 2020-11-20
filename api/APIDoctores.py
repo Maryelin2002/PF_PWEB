@@ -135,4 +135,53 @@ def registro_paciente(cedula: str, nombre: str, apellido: str, sangre: str, gen:
         msg = "Paciente registrado exitosamente"
 
     return{"result": msg, "ok":"true"}
+
+@app.get("/registro_consulta/{ced_paciente}/{emailDoc}/{fecha}/{motivo}/{num_seguro}/{monto}/{diag}")
+def registro_consulta(ced_paciente: str, emailDoc: str, fecha: str, motivo: str, num_seguro: str, monto: str, diag: str):
+
+    #conexion a bd
+    conn = None
+    try:
+        conn = mysql.connector.connect(host='localhost',
+                                       database='aplicaciondoctores',
+                                       user='YelinDBManager',
+                                       password='mysql')
+        if conn.is_connected():
+            print('Connected to MySQL database')
+
+    except Error as e:
+        print(e)
     
+    #buscar id de doctor y id de paciente
+    row = None
+
+    cur = conn.cursor()
+    sql = '''SELECT p.id_paciente, d.id_doctor FROM doctores d
+            JOIN pacientes p ON (d.id_doctor=p.id_doctor)
+            WHERE d.email = %s AND p.cedula = %s'''
+    cur.execute(sql, (emailDoc, ced_paciente))
+
+    rows = cur.fetchall()
+    for r in rows:
+        row = r
+    if (row == None):
+        msg = "Doctor o paciente no encontrados, verifique que el e-mail del doctor y la cedula del paciente sean correctos"
+    else:
+        idPaciente = int(row[0])
+        idDoc = int(row[1])
+        
+        #registrar consulta
+        consulta = (idPaciente, idDoc, fecha, motivo, num_seguro, monto, diag)
+        sql = '''INSERT INTO consultas(id_paciente, id_doctor, fecha, motivo, seguro, monto, diagnostico, nota, evidencia) VALUES(%s,%s,%s,%s,%s,%s,%s,null,null)'''
+        cur.execute(sql, consulta)
+        conn.commit()
+
+        msg = "Consulta agendada exitosamente"
+
+    return{"result": msg, "ok":"true"}
+
+
+
+
+
+
