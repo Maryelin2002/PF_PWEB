@@ -1,7 +1,7 @@
 Metodos del API:
 $ Registro de pacientes//
 $ Inicio de sesion y registro de doctores//
-$ Registro de consultas
+$ Registro de consultas//
 $ Consultar datos de pacientes
 $ Modificar datos de pacientes
 $ Vistas
