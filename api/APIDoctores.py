@@ -180,7 +180,35 @@ def registro_consulta(ced_paciente: str, emailDoc: str, fecha: str, motivo: str,
 
     return{"result": msg, "ok":"true"}
 
+@app.get("/consultar_paciente/{cedula}")
+def consultar_paciente(cedula: str):
 
+    #conexion a bd
+    conn = None
+    try:
+        conn = mysql.connector.connect(host='localhost',
+                                       database='aplicaciondoctores',
+                                       user='YelinDBManager',
+                                       password='mysql')
+        if conn.is_connected():
+            print('Connected to MySQL database')
+
+    except Error as e:
+        print(e)
+
+    #consultar
+    sql = '''SELECT * FROM pacientes WHERE cedula = %s'''
+    cur = conn.cursor()
+    cur.execute(sql, (cedula,))
+
+    r=0
+    rows = cur.fetchall()
+    while r in range(0,len(rows)):
+        dato = rows[r]
+        msg = str(dato)
+        r+=1
+
+    return{"result": msg, "ok":"true"}
 
 
 
