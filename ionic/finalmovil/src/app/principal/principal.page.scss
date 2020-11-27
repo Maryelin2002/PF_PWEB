@@ -1,0 +1,56 @@
+@font-face{
+    font-family: 'TrebuchetMS';
+    src: url('../fonts/TrebuchetMS.ttf');
+  }
+  
+  .login-header{
+    background: deepskyblue;
+  }
+  
+  .login-header{
+    position: relative;
+    background: deepskyblue;
+    border-radius: 0em;
+  }
+  
+  .login-header:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: deepskyblue;
+    border-bottom: 0;
+    margin-left: -15px;
+    margin-bottom: -15px;
+  }
+  
+  .logo-img{
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+ h1{
+     color: deepskyblue;
+     margin-left: 25px;
+     margin-bottom: 15px;
+ }
+
+ ion-content{
+    --background: #fafafa;
+  }
+
+  ion-button{
+      margin: 20px;
+  }
+
+.link-button{
+    font-family: 'TrebuchetMS' ;
+    text-align: center;
+    color: black;
+    margin-left: 130px;
+}

@@ -1,0 +1,151 @@
+@font-face{
+    font-family: 'TrebuchetMS';
+    src: url('../fonts/TrebuchetMS.ttf');
+  }
+  
+  .login-header{
+    background: deepskyblue;
+  }
+  
+  .login-header{
+    position: relative;
+    background: deepskyblue;
+    border-radius: 0em;
+  }
+  
+  .login-header:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: deepskyblue;
+    border-bottom: 0;
+    margin-left: -15px;
+    margin-bottom: -15px;
+  }
+  
+  .logo-img{
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  [heading-colum-lr]{
+  display: flex;
+  -ms-flex-aling: center;
+  align-items: center;
+  }
+  
+  [big-heading]{
+    font-family: "TrebuchetMS" !important;
+    font-size: 30px !important;
+    color: deepskyblue;
+  }
+  
+  [small-heading]{
+  font-family: "TrebuchetMS" !important;
+  color: #000;
+  margin-left: auto;
+  padding-right: 40px;
+  font-size: 20px;
+  }
+  
+  ion-label{
+    font-family: "TrebuchetMS" !important;
+    color: #000;
+    // opacity: .8;
+    font-size: 15px;
+    display: block;
+  }
+  
+  ion-content{
+    --background: #fafafa;
+  }
+  
+  [icon-small]{
+    width: 40px;
+  }
+  
+  .correo{
+    text-align: center;
+  }
+  
+  .password{
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  ion-input{
+    --background: #fafafa;
+    margin-left: 5px;
+  }
+  
+  ion-input ::placeholder{
+    color: #000;
+  }
+  
+  ion-item{
+    margin-top: 20px;
+    --background: #fafafa;
+  }
+  
+  [transparent]{
+    --backgroung : transparent;
+  
+  }
+  
+  ion-input{
+    --color: #000;
+    --paging-bottom: 15px;
+    --pading-top: 15px;
+    --padding-start: 5px;
+    font-size: 15px;
+    text-indent: 1px;
+    padding-left: 10px !important;
+  }
+  
+  [icon-small]{
+    width: 30px;
+  }
+  
+  ion-item{
+    --highlight-color-focused: transparent;
+    --highlight-height:0;
+    --highlight-color-invalid:#000;
+    --highlight-color-valid:#ddd;
+    --min-height: 65px;
+    --padding-start: 0;
+  }
+  
+  [linespace]{
+    height: 30px;
+    margin-top: 28px;
+  }
+  
+  .center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%,-49%);
+    width: 90%;
+  }
+  
+  ion-label{
+   margin-top: 35px;
+   font-size: 20px;
+  }
+
+  ion-card{
+      margin-top: 20px;
+      height: 100%;
+  }
+
+  ion-button{
+      margin-top: 20px;
+  }
+  

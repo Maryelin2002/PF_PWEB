@@ -1,0 +1,7 @@
+{
+  "name": "finalmovil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
