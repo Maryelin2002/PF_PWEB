@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagen/icono.jpg">
+    <title>Reporte zodiacal</title>
+</head>
+<body>
+    <header id="header">
+        <div class="contenedor">
+            <div id="logo">
+                <h3><i class="fas fa-clinic-medical"></i>MedicApp</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a routerLink="/pagina">INICIO</a></li>
+                    <li><a routerLink="/paciente">REGISTRAR PACIENTE</a></li>
+                   <li><a routerLink="/consulta">REGISTRAR CONSULTA</a></li>
+                    <li><a>REPORTE ZODIACAL</a></li>
+                    <li><a routerLink="/visitafecha" >VISITAS POR FECHA</a></li>
+                    <li><a routerLink = "/cantidad">CANTIDAD DE VISITAS</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+    <div id="datos">
+        <h1>REPORTE ZODIACAL</h1>
+    <table id="tabla" class="table table-bordered">
+        <thead id="cabecera">
+            <tr>
+                <th>ID</th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Birthday</th>
+                <th>Signo zodiacal</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo">
+            <tr *ngFor="let JSON of personas">
+                <td>{{ JSON["ID"] }}</td>
+                <td>{{ JSON["Cedula"] }}</td>
+                <td>{{ JSON["Name"] }}</td>
+                <td>{{ JSON["Lastname"] }}</td>
+                <td>{{ JSON["Birthdate"] }}</td>
+                <td>{{ JSON["ZodiacalSign"] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+ 
+
+    
+
+</body>
+</html>

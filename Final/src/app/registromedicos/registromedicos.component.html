@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo de registro</title>
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagen/icono.jpg">
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+                        <form [formGroup]="MedicForm" class="myForm text-center">
+                            <header>Registro medicos</header>
+                            
+                            <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input formControlName="username" class="myInput" type="email" [(ngModel)]="username" name="username" placeholder="Nombre "
+                                id="nombre" required>
+                                </div>
+                                <br>
+                            <div class="form-group">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input formControlName="email" class="myInput" type="email" [(ngModel)]="email" name="email" placeholder="Correo electronico"
+                                id="correo" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                    <input formControlName="password" class="myInput" type="password" [(ngModel)]="password" name="password" id="password"
+                                    placeholder="Contraseña" required>
+                                </div>
+                                <br>
+                                <input type="submit" [disabled]="MedicForm.invalid" class="button" (click)="RegistrarMedico()" value="Registrame"><br><br>
+                             
+                               <br>
+                               <a routerLink="/login">Volver atras</a>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <header>Registro de medicos</header>
+                            <p>Este modulo tiene la funcionalidad de 
+                            registrar medicos en el sistema.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,300 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face{
+    font-family: "TrebuchetMS";
+    src: url(../fonts/TrebuchetMS.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "BebasNeue";
+    src: url(../fonts/BebasNeue.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "WebSymbolsRegular";
+    src: url('../fonts/websymbols-regular-webfont.eot');
+    src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+    url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+    url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#footer{
+    display: block;
+    width: 100%;
+    height: 290px;
+    background:  linear-gradient(45deg,deepskyblue,#9b00e8);
+    color: white;
+    overflow: hidden;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.wrap{
+    margin-top: 50px;
+}
+
+/* .crearfix{
+    float: none;
+    clear: both;
+} */
+
+#footer .wrap > div{
+    float: left;
+    width: 320px;
+    height: 370px;
+    margin: 40px;
+    text-align: center;
+    color: white;
+    font-family: "TrebuchetMS";
+    margin-top: 50px;
+    }
+    
+    
+    #footer a{
+        text-decoration: none;
+        color: #37bcf9;
+        transition: all 300ms;
+    }
+
+ #footer p{
+     text-decoration-line: overline;
+ }
+
+    #footer iframe{
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 5px solid white;
+        box-shadow: 0px 0px 5px gray;
+        margin-bottom: 20px;
+        margin-left: 430px;
+    }
+
+    #header{
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(45deg,deepskyblue,#9b00e8);
+        font-family: "BebasNeue";
+        color: black;
+        margin: 0px;
+    }
+    
+    #logo{
+        float: left;
+        width: 200px;
+        height: 60px;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 20px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 300ms;
+    }
+    
+    #logo:hover{
+        border-radius: 2px ;
+        color:white;
+    }
+
+    #menu{
+        float: right;
+       height: 70px;
+       background: transparent;
+    }
+    
+    #menu ul li{
+        font-size: 21px;
+        display: inline-block;
+        margin: 0px 20px 0px 20px;
+        letter-spacing: 1px;
+        line-height: 70px;
+    }
+    
+    #menu ul li a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        transition: all 200ms;
+    }
+    
+    #menu ul li a:hover{
+        color: black;
+        transform: scale(1.2, 1.2);
+    }
+
+body{
+    background: #fbf3ff;  
+}
+
+#container{
+    position: absolute;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.myRightCtn{
+    position: relative;
+    background-image: linear-gradient(45deg,deepskyblue,#9b00e8);
+    border-radius: 25px;
+    height: 100%;
+    padding: 25px;
+    color: rgb(192, 192, 192);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myLeftCtn{
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding: 25px;
+    padding-left: 50px;
+}
+
+.myLeftCtn header{
+    color: deepskyblue;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.row{
+    height: 100%;
+}
+
+.myCard{
+    position: relative;
+    background: #fff;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+    box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+}
+
+.myRightCtn header{
+    color: #fff;
+    font-size: 44px;
+}
+
+.myRightCtn p{
+    color: #fff;
+    font-size: 14px;
+}
+
+/* form input[type="email"],
+form input[type="password"]{
+  width: 90%;  
+} */
+
+.box{
+    position: relative;
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+.myLeftCtn .myInput{
+width: 200px;
+border-radius: 25px;
+padding: 10px;
+padding-left: 50px;
+border: none;
+-webkit-box-shadow: 0px 10px 49px -14px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 10px 49px -14px rgba(0,0,0,0.7);
+    box-shadow: 0px 10px 49px -14px rgba(0,0,0,0.7);
+}
+
+.myLeftCtn ,.myInput:focus{
+    outline: none;
+}
+
+.myForm{
+    position: relative;
+    margin-top: 50px;
+}
+
+.myLeftCtn .button{
+    background:  linear-gradient(45deg,deepskyblue,#9b00e8);
+    color: #fff;
+    width: 230px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
+    box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
+}
+
+.myLeftCtn .button:hover{
+    background: linear-gradient(45deg,deepskyblue,#9b00e8);
+}
+
+.myLeftCtn .fas{
+    position: relative;
+    color: deepskyblue;
+    left: 36px;
+}
+
+.myLeftCtn .far{
+    position: relative;
+    color: deepskyblue;
+    left: 36px;
+}
+
+.link{
+    margin-top: 20px;
+}
+
+#datos{
+    margin-top: 30px;
+    width: 50%;
+    margin-left: 320px;
+    text-align: center;
+}
+
+#datos h1{
+    margin-bottom: 20px;
+    text-decoration-line: underline;
+    color: #9b00e8;
+}
+
+#datos h1:hover{
+    color: deepskyblue;
+    cursor: pointer;
+}
+
+thead th{
+    text-align: center;
+    transition: all 200ms;
+}
+
+thead{
+    background: linear-gradient(45deg,deepskyblue,#9b00e8); 
+    color: white;
+}
+
+thead th:hover{
+    color: black;
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+}

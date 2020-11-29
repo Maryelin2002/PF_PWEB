@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+</head>
+<body>
+    <header id="header">
+        <div class="contenedor">
+            <div id="logo">
+                <h3><i class="fa fa-h-square" aria-hidden="true"></i>MedicApp</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a>INICIO</a></li>
+                    <li><a routerLink="/paciente">REGISTRAR PACIENTE</a></li>
+                    <li><a routerLink="/consulta">REGISTRAR CONSULTA</a></li>
+                    <li><a routerLink="/zodiaco">REPORTE ZODIACAL</a></li>
+                    <li><a routerLink="/visitafecha">VISITAS POR FECHA</a></li>
+                    <li><a routerLink = "/cantidad">CANTIDAD DE VISITAS</a></li>
+                    <li><a (click)="Cerrar()" routerLink="/login">Cerrar sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+
+    <section id="info">
+        <!--INICIO BANNER-->
+        <div id="banner">
+            <h1>Aplicacion web para medicos &copy; AngularDevs</h1>
+        </div>
+        <!--FIN BANNER-->
+
+        <!--INICIO TARJETAS-->
+        <div id="cards">
+            <div class="card">
+                <p class="icon"><i class="fa fa-user-md" aria-hidden="true"></i></p>
+                
+                <h2 class="category">Registro de medicos</h2>
+                <p class="description">
+                    Modulo para la integracion de medicos al
+                    sistema.
+                </p>
+            </div>
+            <div class="card">
+                <p class="icon"><i class="fa fa-user" aria-hidden="true"></i></p>
+                <h2 class="category">Registro de pacientes</h2>
+                <p class="description">
+                    Modulo en el cual los medicos registraran 
+                    sus pacientes.
+                </p>
+            </div>
+            <div class="card">
+                <p class="icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></p>
+                <h2 class="category">Registro de consultas</h2>
+                <p class="description">
+                    Modulo para el registro de consultas.
+                </p>
+            </div>
+            <div class="card">
+                <p class="icon"><i class="fa fa-file" aria-hidden="true"></i></p>
+                <h2 class="category">Reportes</h2>
+                <p class="description">
+                    Modulo de de reportes.
+                </p>
+            </div>
+           
+        </div>
+        <!--FIN DE TRAJETAS-->
+    </section>
+
+    
+
+</body>
+</html>

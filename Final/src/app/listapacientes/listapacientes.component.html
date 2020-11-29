@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagen/icono.jpg">
+    <title>Reporte zodiacal</title>
+</head>
+<body>
+    <header id="header">
+        <div class="contenedor">
+            <div id="logo">
+                <h3><i class="fas fa-clinic-medical"></i>MedicApp</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a routerLink="/pagina">INICIO</a></li>
+                    <li><a routerLink="/paciente">REGISTRAR PACIENTE</a></li>
+                   <li><a routerLink="/consulta">REGISTRAR CONSULTA</a></li>
+                    <li><a routerLink="/zodiaco">REPORTE ZODIACAL</a></li>
+                    <li><a routerLink="/visitafecha" >VISITAS POR FECHA</a></li>
+                    <li><a routerLink = "/cantidad">CANTIDAD DE VISITAS</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+    <!-- <div id="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+                        <form class="myForm text-center">
+                            <header>Listado de pacientes</header>
+                            <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input class="myInput" type="text" 
+                                id="fecha" [(ngModel)]="codigo" name="codigo" placeholder="Codigo paciente" required>
+                                </div>
+<br>
+                                <input type="submit" (click)="Lista()" class="button" value="Buscar"><br><br>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <header>Buscar paciente </header>
+                            <p>Modulo encargado de buscar paciente segun 
+                                su codigo y poder realizarle modificaciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="modelo">
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title">Actualizar paciente</h4>
+            <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <input class="form-control" type="text" [(ngModel)]="ID"
+        name="ID" placeholder="Codigo paciente"><br>
+        <input class="form-control" type="text" [(ngModel)]="Cedula"
+        name="Cedula" placeholder="Cedula paciente"><br>
+        <input class="form-control" type="text" [(ngModel)]="image"
+        name="image" placeholder="imagen"><br>
+        <input class="form-control" type="text" [(ngModel)]="name"
+        name="name" placeholder="Nombre paciente"><br>
+        <input class="form-control" type="text" [(ngModel)]="lastname"
+        name="lastname" placeholder="Apellido paciente"><br>
+        <input class="form-control" type="text" [(ngModel)]="bloodtype"
+        name="bloodtype" placeholder="Tipo de sangre "><br>
+        <input class="form-control" type="text" [(ngModel)]="email"
+        name="email" placeholder="Correo electronico"><br>
+        <input class="form-control" type="text" [(ngModel)]="sex"
+        name="sex" placeholder="Genero"><br>
+        <input class="form-control" type="date" [(ngModel)]="Birthday"
+        name="Birthday" placeholder="Fecha de nacimiento"><br>
+        <input class="form-control" type="text" [(ngModel)]="allergies"
+        name="allergies" placeholder="Alergias"><br>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary pull-right" (click)="modalRef.Hide()">
+            Close
+        </button>
+    </div>
+    </ng-template> -->
+
+
+    <div id="datos">
+        <h1>LISTADO DE PACIENTES</h1>
+    <table id="tabla" class="table table-bordered">
+        <thead id="cabecera">
+            <tr>
+                <th>Codigo</th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>Alergias</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo">
+            <tr *ngFor="let JSON of lista">
+                <td>{{ JSON["ID"] }}</td>
+                <td>{{ JSON["Cedula"] }}</td>
+                <td>{{ JSON["Name"] }}</td>
+                <td>{{ JSON["Lastname"] }}</td>
+                <td>{{ JSON["Email"] }}</td>
+                <td>{{ JSON["Birthdate"] }}</td>
+                <td>{{ JSON["Allergies"] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+    
+
+</body>
+</html>
+

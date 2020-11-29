@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagen/icono.jpg">
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="contenedor">
+            <div id="logo">
+                <h3><i class="fas fa-clinic-medical"></i>MedicApp</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a routerLink="/pagina">INICIO</a></li>
+                    <li><a routerLink="/paciente">REGISTRAR PACIENTE</a></li>
+                   <li><a routerLink="/consulta">REGISTRAR CONSULTA</a></li>
+                    <li><a routerLink="/zodiaco">REPORTE ZODIACAL</a></li>
+                    <li><a routerLink="/visitafecha" >VISITAS POR FECHA</a></li>
+                    <li><a routerLink = "/cantidad">CANTIDAD DE VISITAS</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+    <div id="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+                        <form [formGroup]="formPacientes" class="myForm text-center">
+                            <header>Registro pacientes</header>
+                            <div class="form-group">
+                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                <input formControlName="cedula" class="myInput" type="text" placeholder="Cedula "
+                                id="cedula" [(ngModel)]="cedula" name="cedula" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <i class="fa fa-picture-o"></i>
+                                    <input formControlName="foto" class="myInput" type="text" id="foto"
+                                    placeholder="Foto" [(ngModel)]="image" name="image" required>
+                                </div>
+                                <br>
+                            <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input formControlName="nombre" class="myInput" type="text" placeholder="Nombre"
+                                id="nombre" [(ngModel)]="name" name="name" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <input formControlName="apellido" class="myInput" type="text" id="apellido"
+                                    placeholder="Apellido" [(ngModel)]="lastname" name="lastname" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                    <input formControlName="sangre" class="myInput" type="text" placeholder="Tipo sangre "
+                                    id="sangre" [(ngModel)]="bloodtype" name="bloodtype" required>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        <input formControlName="correo" class="myInput" type="text" placeholder="Correo electronico"
+                                        id="genero" [(ngModel)]="email" name="email" required>
+                                        </div>
+                                    <br>
+                                <div class="form-group">
+                                    <i class="fa fa-genderless"></i>
+                                    <input formControlName="genero" class="myInput" type="text" placeholder="Genero"
+                                    id="genero" [(ngModel)]="sex" name="sex" required>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <input formControlName="fecha" class="myInput" type="date" id="fecha"
+                                        placeholder="Fecha" [(ngModel)]="birthdate" name="birthdate" required>
+                                    </div>
+                                    <br>
+                            <div class="form-group">
+                                <i class="fa fa-medkit"></i>
+                                <input formControlName="alergia" class="myInput" type="text" placeholder="Alergias"
+                                id="alergia" [(ngModel)]="alergia" name="alergia" required>
+                                </div>
+                                <br>
+                             
+                                <input type="submit" [disabled]="formPacientes.invalid" class="button" (click)="RegistrarPaciente()" value="Registrar paciente"><br><br>
+                             
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <header>Registro de pacientes</header>
+                            <p>Este modulo tiene la funcionalidad de 
+                            registrar pacientes en el sistema.
+                            </p>
+                            <br><br>
+                            <input type="submit" class="button" routerLink="/listapacientes" value="Ver listado de pacientes"><br><br>
+                            <input type="submit" class="button" routerLink="/updateP" value="Actualizar paciente">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <br><br>
+</body>
+
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" href="./imagen/icono.jpg">
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+                        <form [formGroup]="loginForm" class="myForm text-center" >
+                            <header>Inicio de sesion</header>
+                            <div class="form-group">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input formControlName="email" class="myInput" [(ngModel)]="email" name="email" type="email" placeholder="Correo electronico"
+                                id="correo" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                    <input formControlName="password" class="myInput" [(ngModel)]="password" name="password"  type="password" id="password"
+                                    placeholder="Contraseña" required>
+                                </div>
+                                <br>
+                                <input type="submit" [disabled]="loginForm.invalid" (click)="IniciarSesion()" class="button" value="Ingresar"><br><br>
+                                <a class="link" routerLink="/medicos">No tienes una cuenta? Registrate aqui</a>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <header>App para medicos</header>
+                            <p>Esta aplicacion esta dirigida a los medicos
+                                de Republica dominicana.
+                                Cuenta con diferentes modulos y funcionalidades muy
+                                exactas para el sector medico.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+
+</html>

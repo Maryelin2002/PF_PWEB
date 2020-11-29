@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagen/icono.jpg">
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="contenedor">
+            <div id="logo">
+                <h3><i class="fas fa-clinic-medical"></i>MedicApp</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a routerLink="/pagina">INICIO</a></li>
+                    <li><a routerLink="/paciente">REGISTRAR PACIENTE</a></li>
+                   <li><a href="#">REGISTRAR CONSULTA</a></li>
+                    <li><a routerLink="/zodiaco">REPORTE ZODIACAL</a></li>
+                    <li><a routerLink="/visitafecha" >VISITAS POR FECHA</a></li>
+                    <li><a routerLink = "/cantidad">CANTIDAD DE VISITAS</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+    <div id="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+                        <form  class="myForm text-center">
+                            <header>Actualizacion de consultas</header>
+                            <div class="form-group">
+                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                <input  class="myInput" type="text" placeholder="Codigo consulta "
+                                id="paciente" (keyup)="Select()" [(ngModel)]="id" name="id" required>
+                                </div>
+                                <br>
+                            <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input  class="myInput" type="text" placeholder="Paciente "
+                                id="paciente" [(ngModel)]="paciente" name="paciente" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <input  class="myInput" [(ngModel)]="fecha" name="fecha" type="date" 
+                                    id="fecha" required>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <i class="fa fa-file" aria-hidden="true"></i>
+                                        <input  class="myInput" type="text" id="Motivo"
+                                        placeholder="motivo" [(ngModel)]="motivo" name="motivo" required>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                                        <input  class="myInput" type="text" placeholder="Seguro"
+                                        id="seguro" [(ngModel)]="seguro" name="seguro" required>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                            <input  class="myInput" type="text" id="Monto"
+                                            placeholder="monto" [(ngModel)]="monto" name="monto" required>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <i class="fa fa-file" aria-hidden="true"></i>
+                                            <input  class="myInput" type="text" placeholder="Diagnostico "
+                                            id="diagnostico" [(ngModel)]="diagnostico" name="diagnostico" required>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <i class="fa fa-file" aria-hidden="true"></i>
+                                                <input  class="myInput" type="text" id="Evidencia"
+                                                placeholder="Nota" [(ngModel)]="nota" name="nota" required>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <i class="fa fa-file" aria-hidden="true"></i>
+                                                <input  class="myInput" type="text" id="Evidencia"
+                                                placeholder="evidencia" [(ngModel)]="evidencia" name="evidencia" required>
+                                            </div>
+                                            <br>
+
+                                <input type="submit" class="button" (click)="Update()"  value="Actualizar consulta"><br><br>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <header>Actualizacion de consultas</header>
+                            <p>En este modulo los doctores podran modificar las consultas
+                                o visitas de algun paciente determinado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
+

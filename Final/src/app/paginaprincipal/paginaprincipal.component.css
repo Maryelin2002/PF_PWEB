@@ -1,0 +1,309 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face{
+    font-family: "TrebuchetMS";
+    src: url(../fonts/TrebuchetMS.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "BebasNeue";
+    src: url(../fonts/BebasNeue.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "WebSymbolsRegular";
+    src: url('../fonts/websymbols-regular-webfont.eot');
+    src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+    url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+    url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#banner{
+    width: 80%;
+    height: 100px;
+    border: 10px solid white;
+    box-shadow: 0px 0px 2px gray;
+    background: url(../imagen/bakbaner.png);
+    background-position: -200px -200px;
+    margin: 20px auto;
+    margin-left: 135px;
+    overflow: hidden;
+    animation: backBanner 10s linear;
+}
+
+@keyframes backBanner{
+    0%{
+    background-position: 0px 0px;
+    }
+    100%{
+        background-position: -200px -200px;
+    }
+}
+
+#banner h1{
+    display: block;
+    width: 850px;
+    font-family: "BebasNeue";
+    color: white;
+    font-size: 45px;
+    letter-spacing: 2px;
+    font-weight: normal ;
+    margin-right: 27px;
+    margin: 15px auto;
+    text-shadow: 2px 2px 1px black;
+    animation: showText 10s linear;
+}
+
+@keyframes showText{
+    0%{
+     transform: translateX(-600%) scale(5,5);
+     opacity: 1;
+    }
+    50%{
+        transform: translateX(600%) scale(5,5);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(-600%) scale(5,5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%) scale(1,1);
+        text-shadow: 2px 2px 1px black;
+        color: white;
+        opacity: 1;
+    }
+}
+
+
+/*TARJETAS*/
+
+.card{
+    float: left;
+    width: 210px;
+    height: 305px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #ddd;
+    background: white;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 40px;
+    margin-left: 88px;
+    margin-bottom: 50px;
+}
+
+.card:hover{
+    transition: all 300ms;
+    background: black;
+}
+
+.card .icon{
+    display: block;
+    width: 100%;
+    height: 130px;
+    font-size: 50px;
+    line-height: 130px;
+    text-align: center;
+    margin: 0px auto;
+    transition: all 300ms;
+}
+
+.card:hover .icon{
+   font-size: 70px;
+   /* background:  linear-gradient(45deg,deepskyblue,#9b00e8); */
+   background: black;
+   color: deepskyblue;
+   animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon{
+    from{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+
+.card .category{
+    width: 100%;
+    height: 50px;
+    font-family: "TrebuchetMS";
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    color: #00538c;
+    transition: all 300ms;
+   
+}
+
+.card:hover .category{
+    color: white;
+    animation: showCategory 400ms linear;
+    margin-top: 10px;
+}
+
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%);
+        color: black;
+    }
+    to{
+        transform: translateY(0%);
+        color: white;
+    }
+}
+
+.card .description {
+text-align: center;
+color: #24587a;
+font-family:  "TrebuchetMS" ;
+font-size: 15px;
+transition: all 300ms;
+}
+
+.card:hover .description{
+color: white;
+animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription{
+    from{
+        transform: translateX(-300%);
+        color: black;
+    }
+    to{
+        transform: translateX(0%);
+        color: white;
+    }
+}
+
+
+#footer{
+    display: block;
+    width: 100%;
+    height: 350px;
+    background:  linear-gradient(45deg,deepskyblue,#9b00e8);
+    color: white;
+    overflow: hidden;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.wrap{
+    margin-top: 50px;
+}
+
+/* .crearfix{
+    float: none;
+    clear: both;
+} */
+
+#footer .wrap > div{
+    float: left;
+    width: 320px;
+    height: 370px;
+    margin: 40px;
+    text-align: center;
+    color: white;
+    font-family: "TrebuchetMS";
+    margin-top: 50px;
+    }
+    
+    
+    #footer a{
+        text-decoration: none;
+        color: #37bcf9;
+        transition: all 300ms;
+    }
+
+ #footer p{
+     text-decoration-line: overline;
+ }
+
+    #footer iframe{
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 5px solid white;
+        box-shadow: 0px 0px 5px gray;
+        margin-bottom: 20px;
+        margin-left: 430px;
+    }
+
+    a{
+        cursor: pointer;
+    }
+
+    #header{
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(45deg,deepskyblue,#9b00e8);
+        font-family: "BebasNeue";
+        color: black;
+        margin: 0px;
+    }
+    
+    #logo{
+        float: left;
+        width: 200px;
+        height: 60px;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 20px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 300ms;
+    }
+    
+    #logo:hover{
+        border-radius: 2px ;
+        color:white;
+    }
+
+    #menu{
+        float: right;
+       height: 70px;
+       background: transparent;
+    }
+    
+    #menu ul li{
+        font-size: 17px;
+        display: inline-block;
+        margin: 0px 20px 0px 20px;
+        letter-spacing: 1px;
+        line-height: 70px;
+    }
+    
+    #menu ul li a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        transition: all 200ms;
+    }
+    
+    #menu ul li a:hover{
+        color: black;
+        transform: scale(1.2, 1.2);
+    }
+
+    .btn-danger{
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+    }

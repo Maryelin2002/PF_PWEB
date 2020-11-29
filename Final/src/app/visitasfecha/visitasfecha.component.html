@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte por fecha</title>
+    <script src="https://kit.fontawesome.com/39a21bbe1d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./imagen/icono.jpg">
+</head>
+<body>
+    <header id="header">
+        <div class="contenedor">
+            <div id="logo">
+                <h3><i class="fas fa-clinic-medical"></i>MedicApp</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a routerLink="/pagina">INICIO</a></li>
+                    <li><a routerLink="/paciente">REGISTRAR PACIENTE</a></li>
+                   <li><a routerLink="/consulta">REGISTRAR CONSULTA</a></li>
+                    <li><a>REPORTE ZODIACAL</a></li>
+                    <li><a href="#">VISITAS POR FECHA</a></li>
+                    <li><a routerLink = "/cantidad">CANTIDAD DE VISITAS</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+    <div id="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+                        <form class="myForm text-center">
+                            <header>Visitas por fecha</header>
+                            <div class="form-group">
+                                <i class="far fa-calender"></i>
+                                <input class="myInput" type="date" 
+                                id="fecha" [(ngModel)]="fecha" name="fecha" required>
+                                </div>
+<br>
+                                <input type="submit" (click)="Visitas()" class="button" value="Buscar"><br><br>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <header>Modulo reportes</header>
+                            <p>Reporte de visitas por fecha.
+                                Mostrara los pacientes que se consultaron
+                                en la fecha ingresada.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="datos">
+        <table id="tabla" class="table table-bordered">
+            <thead id="cabecera">
+                <tr>
+                    <th>Paciente</th>
+                    <th>Fecha</th>
+                    <th>Motivo</th>
+                    <th>Seguro</th>
+                    <th>Monto</th>
+                    <th>Diagnostico</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let JSON of consultas">
+                    <td>{{ JSON["Patient"]["ID"] }}</td>
+                    <td>{{ JSON["Date"] }}</td>
+                    <td>{{ JSON["ConsultReason"] }}</td>
+                    <td>{{ JSON["SecurityNumber"] }}</td>
+                    <td>{{ JSON["Diagnosis"] }}</td>
+                    <td>{{ JSON["Note"] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+  
+  
+     
+</body>
+</html>
