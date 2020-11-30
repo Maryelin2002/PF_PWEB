@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -12,15 +12,20 @@ export class ZodiacoPage implements OnInit {
   Doctor: string;
   url:any;
   data:any;
-  table: any[] = [];
+  public personas: Array<JSON>;
 
   constructor(private router: Router, private http: HttpClient) {
-    this.url = 'http://127.0.0.1:8000/';
+    this.url = 'http://127.0.0.1:8000';
     this.data = false;
-    this.table;
+    this.personas = [];
+   }
+
+   ngOnChanges(changes: SimpleChanges):void{
+    this.zodiacal();
    }
 
   ngOnInit() {
+    this.zodiacal();
   }
 
   campos: any;
@@ -37,15 +42,21 @@ export class ZodiacoPage implements OnInit {
   }
 
   zodiacal(){
-    this.http.get(`${this.url}zodiacal`).subscribe(
+    this.personas = [];
+    this.http.get(`${this.url}/zodiacal`).subscribe(
       results => {
         this.data = results;
-        console.log(this.data);
+        console.log(this.data.Patients);
+        // document.getElementById("contenido").innerHTML =
+        //     `
+        //    ${this.data.Patients}
 
-        if(this.data.Patients != null){
+        //     `
+        if(this.data.Patients != {}){
           console.log("Reporte zodiacal");
-          for (let i = 0; i < this.data.length; i++) {
-            this.table.push(this.data[i]);
+          for (let k in this.data.Patients) {
+            this.personas.push(this.data.Patients[k]);
+           
         }
 
         }else{

@@ -10,14 +10,7 @@
       <h1 big-heading>Cantidad de visitas</h1>
     </div>
 
-    <ion-item transparent>
-      <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Nombre" name="Nombre" placeholder="Ingrese su nombre aqui"
-      type="text"></ion-input>
-    </ion-item>
-
-    <ion-button  color="primary" class="ion-button-class" shape="round"
-    fill="solid" size="large" expand="block" (click)="cantidadVisitas(); clean();">Generar reporte</ion-button>
+  
 
     <ion-card>
       <ion-card-header>
@@ -26,14 +19,11 @@
       </ion-card-header>
     
       <ion-card-content>
-        <div class="row" *ngFor="let x of table; let i = index">
-          <div class="col">{{table[i]['id']}}</div> 
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
+        <div class="contenido" *ngFor="let x of visitas">
+          <p>Codigo : {{x["ID"]}}</p> 
+          <p>Nombre : {{ x["Name"] }}</p> 
+          <p>Cantidad de visitas : {{ x["ConsultsQuantity"] }}</p> 
+         <hr>
         </div>
       </ion-card-content>
     </ion-card>

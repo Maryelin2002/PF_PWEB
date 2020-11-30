@@ -42,7 +42,15 @@ const routes: Routes = [
   {
     path: 'visitas',
     loadChildren: () => import('./visitas/visitas.module').then( m => m.VisitasPageModule)
+  },  {
+    path: 'updatepaciente',
+    loadChildren: () => import('./updatepaciente/updatepaciente.module').then( m => m.UpdatepacientePageModule)
   },
+  {
+    path: 'updateconsulta',
+    loadChildren: () => import('./updateconsulta/updateconsulta.module').then( m => m.UpdateconsultaPageModule)
+  },
+
 ];
 
 @NgModule({

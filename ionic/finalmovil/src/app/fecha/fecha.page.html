@@ -16,8 +16,8 @@
       type="text"></ion-input>
     </ion-item>
 
-    <ion-button  color="primary" class="ion-button-class" shape="round"
-    fill="solid" size="large" expand="block">Generar reporte</ion-button>
+    <ion-button (click)="vistas(); clean();" color="primary" class="ion-button-class" shape="round"
+    fill="solid" size="large" expand="block">Buscar</ion-button>
 
     <ion-card>
       <ion-card-header>
@@ -26,14 +26,13 @@
       </ion-card-header>
     
       <ion-card-content>
-        <div class="row" *ngFor="let x of table; let i = index">
-          <div class="col">{{table[i]['id']}}</div> 
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
+        <div class="contenido" *ngFor="let x of fecha">
+          <p>Codigo : {{x["ID"]}}</p> 
+            <p>Cedula paciente : {{ x["Patient"]["ID"] }}</p> 
+            <p>Fecha : {{ x["Date"] }}</p> 
+            <p>Motivo consulta : {{ x["ConsultReason"] }}
+            <p>Diagnostico : {{ x["Diagnosis"] }}</p>  
+            <hr>
         </div>
       </ion-card-content>
     </ion-card>

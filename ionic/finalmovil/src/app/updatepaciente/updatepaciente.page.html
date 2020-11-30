@@ -1,0 +1,87 @@
+<ion-header>
+  <div class="login-header ion-padding">
+    <img class="logo-img" src="assets/imagen/icono.png">
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <div heading-colum-lr>
+      <h1 big-heading>Registro paciente</h1>
+    </div>
+ 
+    <!-- <ion-label>
+      Aplicacion movil para medicos
+    </ion-label> -->
+ 
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="id" (keyup)="Select()" name="id" placeholder="Codigo cliente"
+      type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Cedula" name="Cedula" placeholder="Cedula"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Nombre" name="Nombre" placeholder="Nombre"
+      type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Apellido" name="Apellido" placeholder="Apellido"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="TipoDeSangre" name="TipoDeSangre" placeholder="Tipo de sangre"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Genero" name="Genero" placeholder="Genero "
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Fecha" name="Fecha" placeholder="Fecha"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Alergias" name="Alergias" placeholder="Alergias"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Foto" name="Foto" placeholder="Foto"
+      type="text"></ion-input>
+    </ion-item>
+ 
+  
+ 
+    <<ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Correo" name="Correo" placeholder="Doctor"
+      type="text"></ion-input>
+    </ion-item>
+ 
+    <div linespace>
+      <ion-button (click)="Update(); clean();" color="primary" class="ion-button-class" shape="round"
+      fill="solid" size="large" expand="block" >Actualizar paciente</ion-button>
+      <ion-label class="ion-text-center"><span (click)="Menu()" class="link-button">Ir a menu</span></ion-label>
+    </div>
+ 
+  </div>
+</ion-content>
+

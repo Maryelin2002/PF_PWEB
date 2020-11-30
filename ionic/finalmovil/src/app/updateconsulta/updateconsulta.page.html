@@ -1,0 +1,76 @@
+<ion-header>
+  <div class="login-header ion-padding">
+    <img class="logo-img" src="assets/imagen/icono.png">
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <div heading-colum-lr>
+      <h1 big-heading>Actualizar consulta</h1>
+    </div>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="id" name="id" (keyup)="Select()" placeholder="Codigo consulta"
+      type="text"></ion-input>
+    </ion-item>
+ 
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Patient" name="patient" placeholder="Paciente"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Date" name="Date" placeholder="Fecha"
+      type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Motivo" name="Motivo" placeholder="Motivo"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Seguro" name="Seguro" placeholder="Seguro"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Monto" name="Monto" placeholder="Monto"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Diagnostico" name="Diagnostico" placeholder="Diagnostico"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Nota" name="Nota" placeholder="Nota"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input [(ngModel)]="Foto" name="Foto" placeholder="Evidencia"
+      type="text"></ion-input>
+    </ion-item>
+ 
+  
+ 
+    <div linespace>
+      <ion-button  color="primary" class="ion-button-class" shape="round"
+      fill="solid" size="large" expand="block" (click)="Update(); clean();">Actualizar consulta</ion-button>
+      <ion-label class="ion-text-center"><span (click)="Menu()" class="link-button">Ir a menu</span></ion-label>
+    </div>
+  
+ </div>
+</ion-content>

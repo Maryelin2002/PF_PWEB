@@ -4,20 +4,14 @@
   </div>
 </ion-header>
 
-<ion-content>
-  <div class="center">
+<ion-content >
+          <div class="center" >
     <div heading-colum-lr>
       <h1 big-heading>Reporte zodiacal</h1>
+
+    
     </div>
 
-    <ion-item transparent>
-      <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Doctor" name="Doctor" placeholder="Ingrese su nombre aqui"
-      type="text"></ion-input>
-    </ion-item>
-
-    <ion-button  color="primary" class="ion-button-class" shape="round"
-    fill="solid" size="large" expand="block" (click)="zodiacal(); clean();">Generar reporte </ion-button>
 
     <ion-card>
       <ion-card-header>
@@ -25,17 +19,24 @@
         <ion-card-title>Reporte zodiacal</ion-card-title>
       </ion-card-header>
     
-      <ion-card-content>
-        
-        <div class="row" *ngFor="let x of table; let i = index">
-          <div class="col">{{table[i]['id']}}</div> 
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col"></div>
+      <ion-card-content  >
+
+        <div id="contenido" *ngFor="let x of personas">
+            <p>Codigo : {{x["ID"]}}</p> 
+            <p>Cedula : {{ x["Cedula"] }}</p> 
+            <p>Nombre : {{ x["Name"] }}</p> 
+            <p>Apellido : {{ x["Lastname"] }}
+            <p>Fecha de nacimiento : {{ x["Birthdate"] }}</p>  
+            <p>Signo zodiacal : {{ x["ZodiacalSign"] }}</p> 
+            <hr>
         </div>
+        <!-- {{x["ID"]}}
+          {{ x["Cedula"] }}
+          {{ x["Name"] }}
+          {{ x["Lastname"] }}
+          {{ x["Birthdate"] }}
+          {{ x["ZodiacalSign"] }}  -->
+
   
       </ion-card-content>
     </ion-card>

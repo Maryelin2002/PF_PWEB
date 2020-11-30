@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -11,16 +11,21 @@ export class VisitasPage implements OnInit {
   Nombre:string;
   url:any;
   data:any;
-  table: any[] = [];
+  public visitas: Array<JSON>;
 
   constructor(private router: Router, private http: HttpClient) {
-    this.url = 'http://127.0.0.1:8000/';
+    this.url = 'http://127.0.0.1:8000';
     this.data = false;
-    this.table;
+    this.visitas = [];
    }
 
   ngOnInit() {
+    this.cantidadVisitas();
   }
+
+  ngOnChanges(changes: SimpleChanges):void{
+    this.cantidadVisitas();
+   }
 
   campos: any;
   x: number;
@@ -36,15 +41,15 @@ export class VisitasPage implements OnInit {
   }
 
   cantidadVisitas(){
-    this.http.get(`${this.url}consultsQuantity`).subscribe(
+    this.visitas = [];
+    this.http.get(`${this.url}/consultsQuantity`).subscribe(
       results => {
         this.data = results;
         console.log(this.data);
-
-        if(this.data.Patients != null){
+        if(this.data.Patients != {}){
           console.log("Cantidad de visitas");
-          for (let i = 0; i < this.data.length; i++) {
-            this.table.push(this.data[i]);
+          for (let k in this.data.Patients) {
+            this.visitas.push(this.data.Patients[k]);
           }
         }else{
           console.log("No fue posible generar reporte");

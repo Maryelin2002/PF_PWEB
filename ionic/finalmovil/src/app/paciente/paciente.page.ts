@@ -47,8 +47,8 @@ export class PacientePage implements OnInit {
       results => {
         this.data = results;
         console.log(this.data);
-
-        if(this.data.Cedula != null){
+        console.log(this.Cedula);
+        if(this.data.Cedula == this.Cedula){
           console.log("Paciente registrado");
 
         }else{

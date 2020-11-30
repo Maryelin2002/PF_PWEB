@@ -37,7 +37,7 @@ def save(a):
 def CreateDataBase():
     try:
         databases = []
-        myDB = mysql.connector.connect(host="localhost", user="root", password="ABel06032001")
+        myDB = mysql.connector.connect(host="localhost", user="root", password="noemedina")
         myCursor = myDB.cursor()
         myCursor.execute("SHOW DATABASES")
         for k in myCursor:
@@ -50,7 +50,7 @@ CreateDataBase()
 #CREACIÓN DE LA CONEXIÓN EN LA BASE DE DATOS
 def Connection():
     try:
-        myDB = mysql.connector.connect(host="localhost", user="root", password="ABel06032001", database="webfinaldatos")
+        myDB = mysql.connector.connect(host="localhost", user="root", password="noemedina", database="webfinaldatos")
         return myDB
     except:
         print("ERROR")

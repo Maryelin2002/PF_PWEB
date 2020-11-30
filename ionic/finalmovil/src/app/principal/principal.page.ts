@@ -9,12 +9,24 @@ import {Router} from '@angular/router';
 })
 export class PrincipalPage implements OnInit {
 
-  constructor(private router: Router, private http: HttpClient) { }
+  url:any;
+  data:any;
+
+  constructor(private router: Router, private http: HttpClient) {
+    this.url = 'http://127.0.0.1:8000';
+    this.data = false;
+   }
 
   ngOnInit() {
   }
 
   Cerrar(){
+    this.http.get(`${this.url}/logOut`).subscribe(
+      result => {
+        this.data = result;
+        console.log(this.data);
+      }
+    )
     this.router.navigate(["home"]);
   }
 
@@ -36,6 +48,14 @@ export class PrincipalPage implements OnInit {
 
   Visitas(){
     this.router.navigate(["visitas"]);
+  }
+
+  ActualizarPaciente(){
+    this.router.navigate(["updatepaciente"])
+  }
+
+  ActualizarConsulta(){
+    this.router.navigate(["updateconsulta"])
   }
 
 }
