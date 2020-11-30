@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http'
 export class UpdatepacientePage implements OnInit {
 
   constructor(private router: Router, private http: HttpClient) { 
-    this.url = "http://localhost:8000" // http://127.0.0.1:8000
+    this.url = "https://fastapipython.herokuapp.com" // http://127.0.0.1:8000
     this.manageBody = false;
     this.data = false;
   }

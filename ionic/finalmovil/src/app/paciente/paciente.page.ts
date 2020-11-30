@@ -22,7 +22,7 @@ export class PacientePage implements OnInit {
   data: any;
 
   constructor(private router: Router, private http: HttpClient) { 
-    this.url = 'http://127.0.0.1:8000/';
+    this.url = 'https://fastapipython.herokuapp.com';
     this.data = false;
   }
 
