@@ -12,49 +12,49 @@
  
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Paciente"
+      <ion-input [(ngModel)]="Patient" name="patient" placeholder="Paciente"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Doctor"
+      <ion-input [(ngModel)]="Date" name="Date" placeholder="Fecha"
       type="text"></ion-input>
     </ion-item>
     
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Fecha"
+      <ion-input [(ngModel)]="Motivo" name="Motivo" placeholder="Motivo"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Motivo"
+      <ion-input [(ngModel)]="Seguro" name="Seguro" placeholder="Seguro"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Seguro"
+      <ion-input [(ngModel)]="Monto" name="Monto" placeholder="Monto"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Monto"
+      <ion-input [(ngModel)]="Diagnostico" name="Diagnostico" placeholder="Diagnostico"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Diagnostico"
+      <ion-input [(ngModel)]="Nota" name="Nota" placeholder="Nota"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Evidencia"
+      <ion-input [(ngModel)]="Foto" name="Foto" placeholder="Evidencia"
       type="text"></ion-input>
     </ion-item>
  
@@ -62,7 +62,7 @@
  
     <div linespace>
       <ion-button  color="primary" class="ion-button-class" shape="round"
-      fill="solid" size="large" expand="block">Registrar consulta</ion-button>
+      fill="solid" size="large" expand="block" (click)="registrarConsulta(); clean();">Registrar consulta</ion-button>
       <ion-label class="ion-text-center"><span (click)="Menu()" class="link-button">Ir a menu</span></ion-label>
     </div>
   

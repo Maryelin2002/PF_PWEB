@@ -12,12 +12,12 @@
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Ingrese su nombre aqui"
+      <ion-input [(ngModel)]="Nombre" name="Nombre" placeholder="Ingrese su nombre aqui"
       type="text"></ion-input>
     </ion-item>
 
     <ion-button  color="primary" class="ion-button-class" shape="round"
-    fill="solid" size="large" expand="block">Generar reporte</ion-button>
+    fill="solid" size="large" expand="block" (click)="cantidadVisitas(); clean();">Generar reporte</ion-button>
 
     <ion-card>
       <ion-card-header>
@@ -26,9 +26,15 @@
       </ion-card-header>
     
       <ion-card-content>
-        Aqui van los pacientes con sus
-        respectivos datos de Reporte
-        por cantidad de visitas.
+        <div class="row" *ngFor="let x of table; let i = index">
+          <div class="col">{{table[i]['id']}}</div> 
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
       </ion-card-content>
     </ion-card>
 

@@ -9,13 +9,48 @@ import {Router} from '@angular/router';
 })
 export class MedicosPage implements OnInit {
 
-  constructor(private router: Router, private http: HttpClient) { }
+  url: any;
+  data: any;
+  Correo: string;
+  password: string;
+  Username: string;
+
+  campos: any;
+  x: number;
+  clean(){
+    this.campos = document.getElementsByTagName('ion-input');
+    for (this.x = 0; this.x < this.campos.length; this.x++){
+      this.campos[this.x].value = '';
+    }
+  }
+
+  constructor(private router: Router, private http: HttpClient) {
+    this.url = 'http://127.0.0.1:8000/';
+    this.data = false;
+   }
 
   ngOnInit() {
+  }
+
+  registrarDoc(){
+    this.http.get(`${this.url}signUpDoctor/${this.Username},${this.Correo},${this.password}`).subscribe(
+      results => {
+        this.data = results;
+        console.log(this.data);
+
+        if (this.data.Username == this.Username){
+          console.log("Doctor registrado");
+
+        }else{
+          console.log("No fue posible el registro");
+        }
+      }
+    )
   }
 
   Principal(){
     this.router.navigate(["home"]);
   }
+
 
 }

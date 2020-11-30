@@ -9,12 +9,53 @@ import {Router} from '@angular/router';
 })
 export class PacientePage implements OnInit {
 
-  constructor(private router: Router, private http: HttpClient) { }
+  Cedula: string;
+  Nombre: string;
+  Apellido: string;
+  TipoDeSangre: string;
+  Genero: string;
+  Fecha: string;
+  Alergias: string;
+  Foto: string;
+  Correo: string;
+  url: any;
+  data: any;
+
+  constructor(private router: Router, private http: HttpClient) { 
+    this.url = 'http://127.0.0.1:8000/';
+    this.data = false;
+  }
 
   ngOnInit() {
+  }
+
+  campos: any;
+  x: number;
+  clean(){
+    this.campos = document.getElementsByTagName('ion-input');
+    for (this.x = 0; this.x < this.campos.length; this.x++){
+      this.campos[this.x].value = '';
+    }
   }
   
   Menu(){
     this.router.navigate(["principal"])
   }
+
+  registrarPatient(){
+    this.http.get(`${this.url}insertPatient/${this.Cedula},${this.Foto},${this.Nombre},${this.Apellido},${this.TipoDeSangre},${this.Correo},${this.Genero},${this.Fecha},${this.Alergias}`).subscribe(
+      results => {
+        this.data = results;
+        console.log(this.data);
+
+        if(this.data.Cedula != null){
+          console.log("Paciente registrado");
+
+        }else{
+          console.log("No fue posible insertar paciente");
+        }
+      }
+    )
+  }
+
 }

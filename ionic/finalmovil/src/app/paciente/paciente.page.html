@@ -17,63 +17,63 @@
   
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Cedula"
+      <ion-input [(ngModel)]="Cedula" name="Cedula" placeholder="Cedula"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Nombre"
+      <ion-input [(ngModel)]="Nombre" name="Nombre" placeholder="Nombre"
       type="text"></ion-input>
     </ion-item>
     
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Apellido"
+      <ion-input [(ngModel)]="Apellido" name="Apellido" placeholder="Apellido"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Tipo de sangre"
+      <ion-input [(ngModel)]="TipoDeSangre" name="TipoDeSangre" placeholder="Tipo de sangre"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Genero "
+      <ion-input [(ngModel)]="Genero" name="Genero" placeholder="Genero "
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Fecha"
+      <ion-input [(ngModel)]="Fecha" name="Fecha" placeholder="Fecha"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Alergias"
+      <ion-input [(ngModel)]="Alergias" name="Alergias" placeholder="Alergias"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" placeholder="Foto"
+      <ion-input [(ngModel)]="Foto" name="Foto" placeholder="Foto"
       type="text"></ion-input>
     </ion-item>
  
   
  
-    <ion-item transparent>
+    <<ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="password" placeholder="Doctor"
+      <ion-input [(ngModel)]="Correo" name="Correo" placeholder="Doctor"
       type="password"></ion-input>
     </ion-item>
  
     <div linespace>
-      <ion-button  color="primary" class="ion-button-class" shape="round"
-      fill="solid" size="large" expand="block">Registrar paciente</ion-button>
+      <ion-button (click)="registrarPatient(); clean();" color="primary" class="ion-button-class" shape="round"
+      fill="solid" size="large" expand="block" >Registrar paciente</ion-button>
       <ion-label class="ion-text-center"><span (click)="Menu()" class="link-button">Ir a menu</span></ion-label>
     </div>
  
