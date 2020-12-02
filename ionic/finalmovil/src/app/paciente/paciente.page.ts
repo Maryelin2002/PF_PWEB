@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-paciente',
@@ -20,10 +21,22 @@ export class PacientePage implements OnInit {
   Correo: string;
   url: any;
   data: any;
+  PacienteForm: FormGroup;
 
-  constructor(private router: Router, private http: HttpClient) { 
+  constructor(private router: Router, private http: HttpClient,private _builder: FormBuilder) { 
     this.url = 'https://fastapipython.herokuapp.com';
     this.data = false;
+    this.PacienteForm = this._builder.group({
+      cedula: ['',Validators.required],
+      nombre: ['',Validators.required],
+      apellido: ['',Validators.required],
+      sangre: ['',Validators.required],
+      genero: ['',Validators.required],
+      fecha: ['',Validators.required],
+      alergia: ['',Validators.required],
+      foto: ['',Validators.required],
+      correo: ['',Validators.email]
+    })
   }
 
   ngOnInit() {
@@ -43,19 +56,21 @@ export class PacientePage implements OnInit {
   }
 
   registrarPatient(){
-    this.http.get(`${this.url}insertPatient/${this.Cedula},${this.Foto},${this.Nombre},${this.Apellido},${this.TipoDeSangre},${this.Correo},${this.Genero},${this.Fecha},${this.Alergias}`).subscribe(
-      results => {
-        this.data = results;
-        console.log(this.data);
-        console.log(this.Cedula);
-        if(this.data.Cedula == this.Cedula){
-          console.log("Paciente registrado");
-
-        }else{
-          console.log("No fue posible insertar paciente");
+      this.http.get(`${this.url}/insertPatient/${this.Cedula},${this.Foto},${this.Nombre},${this.Apellido},${this.TipoDeSangre},${this.Correo},${this.Genero},${this.Fecha},${this.Alergias}`).subscribe(
+        results => {
+          this.data = results;
+          console.log(this.data);
+          console.log(this.Cedula);
+          if(this.data.Cedula == this.Cedula){
+            console.log("Paciente registrado");
+  
+          }else{
+            console.log("No fue posible insertar paciente");
+          }
         }
-      }
-    )
+      )
+   
+    
   }
 
 }

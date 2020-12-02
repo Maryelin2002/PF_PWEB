@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-updatepaciente',
@@ -8,12 +9,6 @@ import {HttpClient} from '@angular/common/http'
   styleUrls: ['./updatepaciente.page.scss'],
 })
 export class UpdatepacientePage implements OnInit {
-
-  constructor(private router: Router, private http: HttpClient) { 
-    this.url = "https://fastapipython.herokuapp.com" // http://127.0.0.1:8000
-    this.manageBody = false;
-    this.data = false;
-  }
 
   id:number;
   Cedula: string;
@@ -28,6 +23,27 @@ export class UpdatepacientePage implements OnInit {
   url: any;
   data: any;
   manageBody: Boolean;
+  Paciente2Form: FormGroup
+
+  constructor(private router: Router, private http: HttpClient, private _builder: FormBuilder) { 
+    this.url = "https://fastapipython.herokuapp.com" // http://127.0.0.1:8000
+    this.manageBody = false;
+    this.data = false;
+    this.Paciente2Form = this._builder.group({
+      id: ['',Validators.required],
+      cedula: ['',Validators.required],
+      nombre: ['',Validators.required],
+      apellido: ['',Validators.required],
+      sangre: ['',Validators.required],
+      genero: ['',Validators.required],
+      fecha: ['',Validators.required],
+      alergia: ['',Validators.required],
+      foto: ['',Validators.required],
+      correo: ['',Validators.email]
+    })
+  }
+
+  
 
 
   campos: any;

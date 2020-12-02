@@ -10,67 +10,68 @@
       <h1 big-heading>Actualizar consulta</h1>
     </div>
 
+    <form [formGroup]="Consulta2Form">
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="id" name="id" (keyup)="Select()" placeholder="Codigo consulta"
+      <ion-input formControlName="id" [(ngModel)]="id" name="id" (keyup)="Select()" placeholder="Codigo consulta"
       type="text"></ion-input>
     </ion-item>
  
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Patient" name="patient" placeholder="Paciente"
+      <ion-input formControlName="paciente" [(ngModel)]="Patient" name="patient" placeholder="Paciente"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Date" name="Date" placeholder="Fecha"
+      <ion-input formControlName="fecha" [(ngModel)]="Date" name="Date" placeholder="Fecha"
       type="text"></ion-input>
     </ion-item>
     
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Motivo" name="Motivo" placeholder="Motivo"
+      <ion-input formControlName="motivo" [(ngModel)]="Motivo" name="Motivo" placeholder="Motivo"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Seguro" name="Seguro" placeholder="Seguro"
+      <ion-input formControlName="seguro" [(ngModel)]="Seguro" name="Seguro" placeholder="Seguro"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Monto" name="Monto" placeholder="Monto"
+      <ion-input formControlName="monto" [(ngModel)]="Monto" name="Monto" placeholder="Monto"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Diagnostico" name="Diagnostico" placeholder="Diagnostico"
+      <ion-input formControlName="diagnostico" [(ngModel)]="Diagnostico" name="Diagnostico" placeholder="Diagnostico"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Nota" name="Nota" placeholder="Nota"
+      <ion-input formControlName="nota" [(ngModel)]="Nota" name="Nota" placeholder="Nota"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Foto" name="Foto" placeholder="Evidencia"
+      <ion-input formControlName="evidencia" [(ngModel)]="Foto" name="Foto" placeholder="Evidencia"
       type="text"></ion-input>
     </ion-item>
  
   
  
     <div linespace>
-      <ion-button  color="primary" class="ion-button-class" shape="round"
+      <ion-button [disabled]="Consulta2Form.invalid" color="primary" class="ion-button-class" shape="round"
       fill="solid" size="large" expand="block" (click)="Update(); clean();">Actualizar consulta</ion-button>
       <ion-label class="ion-text-center"><span (click)="Menu()" class="link-button">Ir a menu</span></ion-label>
     </div>
-  
+  </form>
  </div>
 </ion-content>

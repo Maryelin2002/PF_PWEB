@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-updateconsulta',
@@ -21,11 +22,23 @@ export class UpdateconsultaPage implements OnInit {
   url: any;
   data: any;
   manageBody: Boolean;
+  Consulta2Form:FormGroup;
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient, private _builder: FormBuilder) {
     this.url = 'https://fastapipython.herokuapp.com';
     this.data = false;
     this.manageBody = false;
+    this.Consulta2Form = this._builder.group({
+      id: ['',Validators.required],
+      paciente: ['',Validators.required],
+      fecha: ['',Validators.required],
+      motivo: ['',Validators.required],
+      seguro: ['',Validators.required],
+      monto: ['',Validators.required],
+      diagnostico: ['',Validators.required],
+      nota: ['',Validators.required],
+      evidencia: ['',Validators.required]
+    })
    }
 
   ngOnInit() {

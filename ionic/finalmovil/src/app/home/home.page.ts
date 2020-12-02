@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ export class HomePage {
   password: string;
   url: any;
   data:any;
+  public loginForm: FormGroup;
 
   campos: any;
   x: number;
@@ -22,13 +24,17 @@ export class HomePage {
     }
   }
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient,private _builder: FormBuilder) {
     this.url = 'https://fastapipython.herokuapp.com';
     this.data = false;
+    this.loginForm = this._builder.group({
+      email: ['',Validators.email],
+      password: ['', Validators.required]
+    })
   }
 
   Login(){
-    this.http.get(`${this.url}logInDoctor/${this.Correo},${this.password}`).subscribe(
+    this.http.get(`${this.url}/logInDoctor/${this.Correo},${this.password}`).subscribe(
       results => {
         this.data = results;
         console.log(this.data);

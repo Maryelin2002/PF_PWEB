@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-consulta',
@@ -19,11 +20,21 @@ export class ConsultaPage implements OnInit {
   Foto: string;
   url: any;
   data: any;
+  ConsultaForm: FormGroup;
 
-  constructor(private router: Router, private http: HttpClient) { 
+  constructor(private router: Router, private http: HttpClient, private _builder: FormBuilder) { 
     this.url = 'https://fastapipython.herokuapp.com';
     this.data = false;
-    
+    this.ConsultaForm = this._builder.group({
+      paciente: ['',Validators.required],
+      fecha: ['',Validators.required],
+      motivo: ['',Validators.required],
+      seguro: ['',Validators.required],
+      monto: ['',Validators.required],
+      diagnostico: ['',Validators.required],
+      nota: ['',Validators.required],
+      evidencia: ['',Validators.required]
+    })
   }
 
 
@@ -44,7 +55,7 @@ export class ConsultaPage implements OnInit {
   }
 
   registrarConsulta(){
-    this.http.get(`${this.url}insertConsult/${this.Patient},${this.Date},${this.Motivo},${this.Seguro},${this.Monto},${this.Diagnostico},${this.Nota},${this.Foto}`).subscribe(
+    this.http.get(`${this.url}/insertConsult/${this.Patient},${this.Date},${this.Motivo},${this.Seguro},${this.Monto},${this.Diagnostico},${this.Nota},${this.Foto}`).subscribe(
       results => {
         this.data = results;
         console.log(this.data);

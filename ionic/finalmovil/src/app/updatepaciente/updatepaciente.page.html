@@ -14,74 +14,77 @@
       Aplicacion movil para medicos
     </ion-label> -->
  
+    <form [formGroup]="Paciente2Form">
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="id" (keyup)="Select()" name="id" placeholder="Codigo cliente"
+      <ion-input formControlName="id"  [(ngModel)]="id" (keyup)="Select()" name="id" placeholder="Codigo cliente"
       type="text"></ion-input>
     </ion-item>
   
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Cedula" name="Cedula" placeholder="Cedula"
+      <ion-input formControlName="cedula"  [(ngModel)]="Cedula" name="Cedula" placeholder="Cedula"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Nombre" name="Nombre" placeholder="Nombre"
+      <ion-input formControlName="nombre"  [(ngModel)]="Nombre" name="Nombre" placeholder="Nombre"
       type="text"></ion-input>
     </ion-item>
     
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Apellido" name="Apellido" placeholder="Apellido"
+      <ion-input formControlName="apellido"  [(ngModel)]="Apellido" name="Apellido" placeholder="Apellido"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="TipoDeSangre" name="TipoDeSangre" placeholder="Tipo de sangre"
+      <ion-input formControlName="sangre"  [(ngModel)]="TipoDeSangre" name="TipoDeSangre" placeholder="Tipo de sangre"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Genero" name="Genero" placeholder="Genero "
+      <ion-input formControlName="correo"  [(ngModel)]="Correo" name="Correo" placeholder="Correo"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Fecha" name="Fecha" placeholder="Fecha"
+      <ion-input formControlName="genero"  [(ngModel)]="Genero" name="Genero" placeholder="Genero "
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Alergias" name="Alergias" placeholder="Alergias"
+      <ion-input formControlName="fecha"  [(ngModel)]="Fecha" name="Fecha" placeholder="Fecha"
       type="text"></ion-input>
     </ion-item>
 
     <ion-item transparent>
       <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Foto" name="Foto" placeholder="Foto"
+      <ion-input formControlName="alergia"  [(ngModel)]="Alergias" name="Alergias" placeholder="Alergias"
+      type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+      <img icon-small src="assets/imagen/usericon.jpg">
+      <ion-input formControlName="foto"  [(ngModel)]="Foto" name="Foto" placeholder="Foto"
       type="text"></ion-input>
     </ion-item>
  
   
  
-    <<ion-item transparent>
-      <img icon-small src="assets/imagen/usericon.jpg">
-      <ion-input [(ngModel)]="Correo" name="Correo" placeholder="Doctor"
-      type="text"></ion-input>
-    </ion-item>
+    
  
     <div linespace>
-      <ion-button (click)="Update(); clean();" color="primary" class="ion-button-class" shape="round"
+      <ion-button [disabled]="Paciente2Form.invalid" (click)="Update(); clean();" color="primary" class="ion-button-class" shape="round"
       fill="solid" size="large" expand="block" >Actualizar paciente</ion-button>
       <ion-label class="ion-text-center"><span (click)="Menu()" class="link-button">Ir a menu</span></ion-label>
     </div>
- 
+  </form>
   </div>
 </ion-content>
 

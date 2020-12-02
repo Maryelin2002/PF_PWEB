@@ -16,10 +16,10 @@
      Aplicacion movil para medicos
    </ion-label> -->
 
- 
+ <form [formGroup]="loginForm">
    <ion-item transparent>
      <img icon-small src="assets/imagen/usericon.jpg">
-     <ion-input [(ngModel)]="Correo" name="Correo" placeholder="Username"
+     <ion-input formControlName="email" [(ngModel)]="Correo" name="Correo" placeholder="Username"
      type="text"></ion-input>
    </ion-item>
 
@@ -27,16 +27,17 @@
 
    <ion-item transparent>
      <img icon-small src="assets/imagen/password.png">
-     <ion-input [(ngModel)]="password" name="password" placeholder="Password"
+     <ion-input formControlName="password" [(ngModel)]="password" name="password" placeholder="Password"
      type="password"></ion-input>
    </ion-item>
 
    <div linespace>
-     <ion-button (click)="Login(); clean();" color="primary" class="ion-button-class" shape="round"
+     <ion-button [disabled]="loginForm.invalid" (click)="Login(); clean();" color="primary" class="ion-button-class" shape="round"
      fill="solid" size="large" expand="block">Ingresar</ion-button>
      <ion-label class="ion-text-center">No tienes una cuenta? <span (click)="Medicos()" class="link-button">Registrate</span></ion-label>
 
    </div>
+  </form>
 
  </div>
 
