@@ -62,7 +62,7 @@ export class UpdateconsultaPage implements OnInit {
               console.log(this.data.ID)
               if (this.data.ID == this.id){
                 this.id = this.data.ID;
-                this.Patient = this.data.Patient.ID;
+                this.Patient = this.data.Patient.Name;
                 this.Date = this.data.Date;
                 this.Motivo = this.data.ConsultReason;
                 this.Seguro = this.data.SecurityNumber;

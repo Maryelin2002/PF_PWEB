@@ -39,7 +39,7 @@ export class HomePage {
         this.data = results;
         console.log(this.data);
 
-        if (this.data.LogIn){
+        if (this.data.LogIn == true){
           this.router.navigate(["principal"]);
 
         }
